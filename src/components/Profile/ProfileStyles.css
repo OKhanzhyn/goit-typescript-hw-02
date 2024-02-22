@@ -20,12 +20,12 @@ width: 580px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 20px;
+    padding-top: 30px;
 }
 .profCardImg {
     display: block;
     max-width: 220px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     border-radius: 50%;
     background-color: #232525;
 }    
@@ -34,24 +34,24 @@ width: 580px;
     font-family: 'Arial';
     font-weight: 700;
     padding: 0;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     margin-top: 0;
 }
 /* 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif */
 .profcardTag {
-    font-size: 35px;
-    font-family: 'Arial';
-    font-weight: 400;
-    color: #908f8f;
-    margin-bottom: 15px;
-    margin-top: 0;
-}
-.profCardLocation {
-    font-size: 35px;
+    font-size: 40px;
     font-family: 'Arial';
     font-weight: 400;
     color: #908f8f;
     margin-bottom: 20px;
+    margin-top: 0;
+}
+.profCardLocation {
+    font-size: 40px;
+    font-family: 'Arial';
+    font-weight: 400;
+    color: #908f8f;
+    margin-bottom: 35px;
     margin-top: 0;
     padding: 0;
 }
@@ -60,7 +60,7 @@ width: 580px;
     flex-direction: row;
     justify-content: space-between;
     width: 580px;
-    height: 150px;
+    height: 140px;
     border-top: 4px solid #757373;    
     background-color: #c6c2c2;
     margin: 0;
