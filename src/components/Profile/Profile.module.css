@@ -72,8 +72,7 @@ background-color: #f6f9fb;
     padding: 0;
 }
 .profCardStatsItem:not(:last-child) {    
-    border-right: 4px solid #757373; 
-    
+    border-right: 4px solid #757373;     
 }
 .profCardStatsItemName {
     display: flex;
