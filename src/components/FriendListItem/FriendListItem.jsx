@@ -1,11 +1,12 @@
 // import css from './FriendListItem.module.css'
 
-const FriendListItem = (friends) => {
+const FriendListItem = ({ avatar, name, isOnline }) => {
+    // console.log(friends)
   return (
     <div>
-    <img src={friends.avatar} alt="Avatar" width="48" />
-    <p>{friends.name}</p>
-    <p>{friends.isOnline ? <span>Online</span> : <span>Offline</span>}</p>
+    <img src={avatar} alt="Avatar" width="48" />
+    <p>{name}</p>
+    <p>{isOnline ? <span>Online</span> : <span>Offline</span>}</p>
     </div>
   )
 }
