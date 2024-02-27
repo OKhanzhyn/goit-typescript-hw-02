@@ -1,4 +1,4 @@
-import css from './TransactionHistory.module.css';
+import './TransactionHistory.module.css';
 
 const TransactionHistory = ({items}) => {
   return (
@@ -31,14 +31,3 @@ const TransactionHistory = ({items}) => {
   )}
 
 export default TransactionHistory
-
-/* <tr>
-      <td>Invoice</td>
-      <td>125</td>
-      <td>USD</td>
-    </tr>
-    <tr>
-      <td>Withdrawal</td>
-      <td>85</td>
-      <td>USD</td>
-    </tr> */
