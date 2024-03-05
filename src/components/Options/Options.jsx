@@ -1,18 +1,9 @@
 import css from './Options.module.css';
 // import { useState } from 'react';
 
-// import { useEffect } from "react";
-
-const Options = ({updateFeedback}) => {
-
-  // const [ counter, setCounter ] = useState(0);
+const Options = (updateFeedback) => {
+// console.log(updateFeedback)
   
- /* const updateFeedback = () => {
-    // (feedbackType) // Тут використовуй сеттер, щоб оновити стан
-    // setCounter((prevState) => prevState + 1);
-    setCounter(counter + 1); 
-  };*/
-
   return (
     <ul className={css.optonsList}>
       <li>

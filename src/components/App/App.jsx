@@ -1,9 +1,7 @@
 
 import css from './App.module.css';
 import Feedback from '../Feedback/Feedback'
-// import userData from "../../userData.json";
 import Description from "../Description/Description";
-// import feedbackList from "../../feedbackList.json";
 import Options from '../Options/Options';
 import { useState } from 'react';
 
@@ -13,24 +11,29 @@ const feedbackType = {
 	bad: 0
 }
 
+
 const App = () => {
   const [counter, setCounter] = useState(0);
   
   const updateFeedback = feedbackType => {
-    // (feedbackType) // Тут використовуй сеттер, щоб оновити стан
+    
     // setCounter((prevState) => prevState + 1);
     setCounter(counter + 1); 
-    // console.log(feedbackType)
+    
   };
   return (
     <div className={css.pageStyle}>
       <Description/>
-      <Options/>
+      <Options
+      // good={updateFeedback}
+      // neutral={updateFeedback}
+      // bad={updateFeedback}
+      />
       <Feedback
-      good={updateFeedback.good}
-      neutral={updateFeedback.neutral}
-      bad={updateFeedback.bad}
-        />
+      good={feedbackType.good}
+      neutral={feedbackType.neutral}
+      bad={feedbackType.bad}
+      />
       
     </div>
   );
