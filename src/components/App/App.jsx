@@ -13,28 +13,18 @@ const feedbackType = {
 const App = () => {
   const [counter, setCounter] = useState(feedbackType);
   
-  // const updateFeedback = feedbackType => {
+  const updateFeedback = feedbackType => {
     
-  //    setCounter((prevState) => prevState + 1);
-  //   // setCounter({counter} + 1);     
-  // };
+    setCounter({...counter, [feedbackType]: counter[feedbackType] + 1});     
+  };
   
-  const updateFeedbackGood = feedbackType => {
-   setCounter({...counter, good: counter.good + 1});     
- };
- const updateFeedbackNeutral = feedbackType => {
-  setCounter({...counter, neutral: counter.neutral + 1});     
-};
-const updateFeedbackBad = feedbackType => {
-  setCounter({...counter, bad: counter.bad + 1});     
-};
   return (
     <div className={css.pageStyle}>
       <Description/>
       <Options
-      good={updateFeedbackGood}
-      neutral={updateFeedbackNeutral}
-      bad={updateFeedbackBad}
+      good={updateFeedback.good}
+      neutral={updateFeedback.neutral}
+      bad={updateFeedback.bad}
       />
       <Feedback
       good={feedbackType.good}
@@ -45,6 +35,12 @@ const updateFeedbackBad = feedbackType => {
   );
 };
 export default App
+
+
+
+// setCounter({...counter, good: counter.good + 1}); 
+    // setCounter({...counter, neutral: counter.neutral + 1});     
+    // setCounter({...counter, bad: counter.bad + 1});  
 
  // good={updateFeedback}
       // neutral={updateFeedback}

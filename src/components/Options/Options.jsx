@@ -1,19 +1,19 @@
 import css from './Options.module.css';
 // import { useState } from 'react';
 
-const Options = ({updateFeedbackGood ,updateFeedbackNeutral, updateFeedbackBad}) => {
+const Options = (updateFeedback) => {
 // console.log(updateFeedback)
   
   return (
     <ul className={css.optonsList}>
       <li>
-      <button onClick={updateFeedbackGood} type='button'>Good</button>
+      <button onClick={updateFeedback} type='button'>Good</button>
       </li>
       <li>
-      <button onClick={updateFeedbackNeutral} type='button'>Neutral</button>
+      <button onClick={updateFeedback} type='button'>Neutral</button>
       </li>
       <li>
-      <button onClick={updateFeedbackBad} type='button'>Bad</button>
+      <button onClick={updateFeedback} type='button'>Bad</button>
       </li>
       
     </ul>
