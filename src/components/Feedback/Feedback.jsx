@@ -1,20 +1,20 @@
 // rafce - сніпет
 import css from './Feedback.module.css';
 
-const Feedback = ({good, neutral, bad}) => {
+const Feedback = (counter) => {
 //  console.log(Options)
 
   return (
    <ul className={css.feedbackBox}>
     
     <li>
-      <p>Good: {good}</p> 
+      <p>Good: {counter.good}</p> 
     </li> 
     <li>
-      <span>Neutral: {neutral}</span>
+      <span>Neutral: {counter.neutral}</span>
     </li> 
     <li>
-      <span>Bad: {bad}</span>
+      <span>Bad: {counter.bad}</span>
     </li>  
        
    </ul>
