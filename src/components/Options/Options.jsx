@@ -15,9 +15,9 @@ const Options = ({updateFeedback, setCounter, totalFeedback}, feedbackType) => {
       <button onClick={()=>updateFeedback("bad")} type='button'>Bad</button>
       </li>
       
-      <li>
+      {totalFeedback > 0 ? <li>
       <button onClick={() => setCounter(feedbackType)} type='button'>Reset</button>
-      </li>
+      </li> : ""}
     </ul>
   )
 }

@@ -16,6 +16,14 @@ const App = () => {
   
   const totalFeedback = counter.good + counter.neutral + counter.bad;  
   
+  // const [feedbacks, setFeedbacks] = useState(() => {
+    // const savedFeedbacks = window.localStorage.getItem("saved-feedbacks");
+    // if(savedFeedbacks !== null) {
+    //   return JSON.parse(savedFeedbacks);
+    // }
+    // return 0;
+  
+ 
 const updateFeedback = feedbackType => {    
     setCounter({...counter, [feedbackType]: counter[feedbackType] + 1});     
   };
