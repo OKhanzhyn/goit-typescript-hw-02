@@ -1,27 +1,26 @@
 import css from './Options.module.css';
 // import { useState } from 'react';
 
-const Options = (updateFeedback) => {
+const Options = ({updateFeedback}, {setCounter}) => {
 // console.log(updateFeedback)
   
   return (
-    <ul className={css.optonsList}>
+    <ul className={css.optionsList}>
       <li>
-      <button onClick={updateFeedback} type='button'>Good</button>
+      <button onClick={()=>updateFeedback("good")} type='button'>Good</button>
       </li>
       <li>
-      <button onClick={updateFeedback} type='button'>Neutral</button>
+      <button onClick={()=>updateFeedback("neutral")} type='button'>Neutral</button>
       </li>
       <li>
-      <button onClick={updateFeedback} type='button'>Bad</button>
+      <button onClick={()=>updateFeedback("bad")} type='button'>Bad</button>
       </li>
-      
+      <li>
+      <button onClick={() => setCounter(0)} type='button'>Reset</button>
+      </li> 
     </ul>
   )
 }
 
 export default Options
 
-/* <li>
-      <button>Reset</button>
-      </li> */

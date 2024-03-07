@@ -3,6 +3,7 @@ import Feedback from '../Feedback/Feedback'
 import Description from "../Description/Description";
 import Options from '../Options/Options';
 import { useState } from 'react';
+import Notification from '../Notification/Notification';
 
 const feedbackType = {
 	good: 0,
@@ -13,30 +14,43 @@ const feedbackType = {
 const App = () => {
   const [counter, setCounter] = useState(feedbackType);
   
-  const updateFeedback = feedbackType => {
+  const totalFeedback = counter.good + counter.neutral + counter.bad;
+  
+  
+const updateFeedback = feedbackType => {
     
     setCounter({...counter, [feedbackType]: counter[feedbackType] + 1});     
   };
   
+
+
   return (
     <div className={css.pageStyle}>
       <Description/>
       <Options
-      good={updateFeedback.good}
-      neutral={updateFeedback.neutral}
-      bad={updateFeedback.bad}
+      updateFeedback={updateFeedback}
+      setCounter={setCounter}
       />
-      <Feedback
-      good={feedbackType.good}
-      neutral={feedbackType.neutral}
-      bad={feedbackType.bad}
-      />
+      {totalFeedback > 0 ? <Feedback
+      good={counter.good}
+      neutral={counter.neutral}
+      bad={counter.bad}
+      /> : ""}
+      {totalFeedback === 0 ? <Notification/> : ""}
     </div>
   );
 };
 export default App
 
 
+
+// const [showFeedback, setShowFeedback] = useState(false);
+
+// const handleToggleFeedback = () => {
+//     setShowFeedback(!showFeedback);
+//   };
+
+// onClose={handleToggleFeedback}
 
 // setCounter({...counter, good: counter.good + 1}); 
     // setCounter({...counter, neutral: counter.neutral + 1});     

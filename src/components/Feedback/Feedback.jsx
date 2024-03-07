@@ -1,8 +1,8 @@
 // rafce - сніпет
 import css from './Feedback.module.css';
+// import { useEffect } from 'react';
 
 const Feedback = (counter) => {
-//  console.log(Options)
 
   return (
    <ul className={css.feedbackBox}>
@@ -25,3 +25,14 @@ const Feedback = (counter) => {
 export default Feedback
 
 
+// useEffect(() => {
+//    const noFeedbacks = (totalFeedback) => {
+//     if (totalFeedback > 0) {
+//       // console.log(totalFeedback)
+//       onClose();
+//     }
+//     else {
+//       !onClose();
+//     }
+//   }
+// }, [onClose]);
