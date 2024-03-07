@@ -14,15 +14,11 @@ const feedbackType = {
 const App = () => {
   const [counter, setCounter] = useState(feedbackType);
   
-  const totalFeedback = counter.good + counter.neutral + counter.bad;
+  const totalFeedback = counter.good + counter.neutral + counter.bad;  
   
-  
-const updateFeedback = feedbackType => {
-    
+const updateFeedback = feedbackType => {    
     setCounter({...counter, [feedbackType]: counter[feedbackType] + 1});     
   };
-  
-
 
   return (
     <div className={css.pageStyle}>
