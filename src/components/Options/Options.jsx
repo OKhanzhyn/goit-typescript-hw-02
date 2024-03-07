@@ -1,7 +1,7 @@
 import css from './Options.module.css';
 // import { useState } from 'react';
 
-const Options = ({updateFeedback, setCounter, feedbackType}) => {
+const Options = ({updateFeedback, setCounter}, feedbackType) => {
   
   return (
     <ul className={css.optionsList}>
@@ -16,7 +16,7 @@ const Options = ({updateFeedback, setCounter, feedbackType}) => {
       </li>
       
       <li>
-      <button onClick={() => setCounter([feedbackType])} type='button'>Reset</button>
+      <button onClick={() => setCounter(feedbackType)} type='button'>Reset</button>
       </li>
     </ul>
   )
