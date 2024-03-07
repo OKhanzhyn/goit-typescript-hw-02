@@ -9,20 +9,19 @@ const feedbackType = {
 	neutral: 0,
 	bad: 0}
 const App = () => {
-  const [counter, setCounter] = useState(feedbackType);  
+  // const [counter, setCounter] = useState(feedbackType);  
+    const [counter, setCounter] = useState(() => {
+    const savedFeedbacks = localStorage.getItem("saved-feedbacks");
+    if (!savedFeedbacks) return feedbackType;
+  
+    const parsedFeedbacks = JSON.parse(savedFeedbacks);
+    return parsedFeedbacks;
+  });  
   const totalFeedback = counter.good + counter.neutral + counter.bad; 
   
-  const [feedbacks, setFeedbacks] = useState(() => {
-    const savedFeedbacks = window.localStorage.getItem("saved-feedbacks");
-    if(savedFeedbacks !== null) {
-      return JSON.parse(savedFeedbacks);
-    }
-    return 0;
-  })
-  
- useEffect(() => {
-  window.localStorage.setItem("saved-feedbacks", JSON.stringify(feedbacks));
- }, [feedbacks]);
+useEffect(() => {
+  localStorage.setItem("saved-feedbacks", JSON.stringify(counter));
+}, [counter]);
 
 const updateFeedback = feedbackType => {    
     setCounter({...counter, [feedbackType]: counter[feedbackType] + 1});     
@@ -38,7 +37,7 @@ const updateFeedback = feedbackType => {
       good={counter.good}
       neutral={counter.neutral}
       bad={counter.bad}
-      saved-feedbacks={feedbacks}
+      saved-feedbacks={counter}
       /> : ""}
       {totalFeedback === 0 ? <Notification/> : ""}
     </div>
@@ -46,6 +45,17 @@ const updateFeedback = feedbackType => {
 export default App
 
 
+// const [feedbacks, setFeedbacks] = useState(() => {
+  //   const savedFeedbacks = window.localStorage.getItem("saved-feedbacks");
+  //   if(savedFeedbacks !== null) {
+  //     return JSON.parse(savedFeedbacks);
+  //   }
+  //   return 0;
+  // })
+  
+//  useEffect(() => {
+//   window.localStorage.setItem("saved-feedbacks", JSON.stringify(feedbacks));
+//  }, [feedbacks]);
 
 // const [showFeedback, setShowFeedback] = useState(false);
 

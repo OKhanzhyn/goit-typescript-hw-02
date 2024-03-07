@@ -1,5 +1,4 @@
 import css from './Options.module.css';
-// import { useState } from 'react';
 
 const Options = ({updateFeedback, setCounter, totalFeedback}, feedbackType) => {
   
