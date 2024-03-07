@@ -1,9 +1,7 @@
 // rafce - сніпет
 import css from './Feedback.module.css';
-// import { useEffect } from 'react';
 
 const Feedback = (counter) => {
-
   return (
    <ul className={css.feedbackBox}>
     
@@ -22,11 +20,9 @@ const Feedback = (counter) => {
     <li>
       <span>Positive: {Math.round(((counter.good + counter.neutral) / (counter.good + counter.neutral + counter.bad)) * 100)} %</span>
     </li>     
-   </ul>
-   
+   </ul>   
   )
 }
-
 export default Feedback
 
 
