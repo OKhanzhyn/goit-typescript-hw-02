@@ -16,7 +16,12 @@ const Feedback = (counter) => {
     <li>
       <span>Bad: {counter.bad}</span>
     </li>  
-       
+    <li>
+      <span>Total: {counter.good + counter.neutral + counter.bad}</span>
+    </li>  
+    <li>
+      <span>Positive: {Math.round(((counter.good + counter.neutral) / (counter.good + counter.neutral + counter.bad)) * 100)} %</span>
+    </li>     
    </ul>
    
   )

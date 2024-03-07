@@ -1,7 +1,7 @@
 import css from './Options.module.css';
 // import { useState } from 'react';
 
-const Options = ({updateFeedback, setCounter}, feedbackType) => {
+const Options = ({updateFeedback, setCounter, totalFeedback}, feedbackType) => {
   
   return (
     <ul className={css.optionsList}>
