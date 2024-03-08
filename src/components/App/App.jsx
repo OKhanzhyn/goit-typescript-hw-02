@@ -9,7 +9,7 @@ const feedbackType = {
 	neutral: 0,
 	bad: 0}
 const App = () => {
-  // const [counter, setCounter] = useState(feedbackType);  
+ 
     const [counter, setCounter] = useState(() => {
     const savedFeedbacks = localStorage.getItem("saved-feedbacks");
     if (!savedFeedbacks) return feedbackType;
@@ -26,13 +26,17 @@ useEffect(() => {
 const updateFeedback = feedbackType => {    
     setCounter({...counter, [feedbackType]: counter[feedbackType] + 1});     
   };
+  const handleReset = () => {
+    setCounter(feedbackType);
+  };
+  
   return (
     <div className={css.pageStyle}>
       <Description/>
       <Options
       updateFeedback={updateFeedback}
       total={totalFeedback}
-      feedbackType={feedbackType}
+      handleReset={handleReset}     
       />      
       {totalFeedback > 0 ? <Feedback
       good={counter.good}
@@ -43,17 +47,4 @@ const updateFeedback = feedbackType => {
     </div>
   );};
 export default App
-
-// saved-feedbacks={counter}
-// const [feedbacks, setFeedbacks] = useState(() => {
-  //   const savedFeedbacks = window.localStorage.getItem("saved-feedbacks");
-  //   if(savedFeedbacks !== null) {
-  //     return JSON.parse(savedFeedbacks);
-  //   }
-  //   return 0;
-  // })
-  
-//  useEffect(() => {
-//   window.localStorage.setItem("saved-feedbacks", JSON.stringify(feedbacks));
-//  }, [feedbacks]);
 

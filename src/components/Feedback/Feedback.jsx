@@ -24,16 +24,3 @@ const Feedback = (counter) => {
   )
 }
 export default Feedback
-
-
-// useEffect(() => {
-//    const noFeedbacks = (totalFeedback) => {
-//     if (totalFeedback > 0) {
-//       // console.log(totalFeedback)
-//       onClose();
-//     }
-//     else {
-//       !onClose();
-//     }
-//   }
-// }, [onClose]);
