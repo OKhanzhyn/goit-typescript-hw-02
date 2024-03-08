@@ -1,6 +1,6 @@
 import css from './Options.module.css';
 
-const Options = ({updateFeedback, setCounter, totalFeedback}, feedbackType) => {
+const Options = ({updateFeedback, setCounter, total}) => {
   
   return (
     <ul className={css.optionsList}>
@@ -14,8 +14,8 @@ const Options = ({updateFeedback, setCounter, totalFeedback}, feedbackType) => {
       <button onClick={()=>updateFeedback("bad")} type='button'>Bad</button>
       </li>
       
-      {totalFeedback > 0 ? <li>
-      <button onClick={() => setCounter(feedbackType)} type='button'>Reset</button>
+      {total > 0 ?<li>
+      <button onClick={() => setCounter({feedbackType})} type='button'>Reset</button>
       </li> : ""}
     </ul>
   )
