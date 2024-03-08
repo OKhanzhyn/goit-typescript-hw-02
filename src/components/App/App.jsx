@@ -18,7 +18,9 @@ const App = () => {
     return parsedFeedbacks;
   });  
   const totalFeedback = counter.good + counter.neutral + counter.bad; 
-  
+  const prosFeedbacks = Math.round(((counter.good + counter.neutral) / (counter.good + counter.neutral + counter.bad)) * 100);
+  console.log(prosFeedbacks)
+
 useEffect(() => {
   localStorage.setItem("saved-feedbacks", JSON.stringify(counter));
 }, [counter]);
@@ -42,9 +44,8 @@ const updateFeedback = feedbackType => {
       good={counter.good}
       neutral={counter.neutral}
       bad={counter.bad}      
-      /> : ""}
-      {totalFeedback === 0 ? <Notification /> : ""}
+      prosFeedbacks={prosFeedbacks}
+      /> : <Notification />}     
     </div>
   );};
 export default App
-
