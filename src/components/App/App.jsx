@@ -8,8 +8,7 @@ const feedbackType = {
 	good: 0,
 	neutral: 0,
 	bad: 0}
-const App = () => {
- 
+const App = () => {    
     const [counter, setCounter] = useState(() => {
     const savedFeedbacks = localStorage.getItem("saved-feedbacks");
     if (!savedFeedbacks) return feedbackType;
@@ -17,9 +16,9 @@ const App = () => {
     const parsedFeedbacks = JSON.parse(savedFeedbacks);
     return parsedFeedbacks;
   });  
+  
   const totalFeedback = counter.good + counter.neutral + counter.bad; 
   const prosFeedbacks = Math.round(((counter.good + counter.neutral) / (counter.good + counter.neutral + counter.bad)) * 100);
-  console.log(prosFeedbacks)
 
 useEffect(() => {
   localStorage.setItem("saved-feedbacks", JSON.stringify(counter));
@@ -28,10 +27,8 @@ useEffect(() => {
 const updateFeedback = feedbackType => {    
     setCounter({...counter, [feedbackType]: counter[feedbackType] + 1});     
   };
-  const handleReset = () => {
-    setCounter(feedbackType);
-  };
-  
+  const handleReset = () => {setCounter(feedbackType);};  
+
   return (
     <div className={css.pageStyle}>
       <Description/>
@@ -45,7 +42,7 @@ const updateFeedback = feedbackType => {
       neutral={counter.neutral}
       bad={counter.bad}      
       prosFeedbacks={prosFeedbacks}
-      /> : <Notification />}     
+      /> :  <Notification/> }         
     </div>
   );};
 export default App

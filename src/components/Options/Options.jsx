@@ -15,7 +15,7 @@ const Options = ({updateFeedback, total, handleReset}) => {
       </li>
       
       {total > 0 ?<li>
-      <button onClick={handleReset} type='button'>Reset</button>
+      <button onClick={handleReset}  type='button'>Reset</button>
       </li> : ""}
     </ul>
   )
