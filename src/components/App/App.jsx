@@ -42,7 +42,8 @@ const updateFeedback = feedbackType => {
       neutral={counter.neutral}
       bad={counter.bad}      
       prosFeedbacks={prosFeedbacks}
-      /> :  <Notification/> }         
+      totalFeedback={totalFeedback}
+      /> : <Notification/> }         
     </div>
   );};
 export default App

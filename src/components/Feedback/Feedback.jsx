@@ -15,7 +15,7 @@ const Feedback = (counter) => {
       <span>Bad: {counter.bad}</span>
     </li>  
     <li className={css.fedbackItem}>
-      <span>Total: {counter.good + counter.neutral + counter.bad}</span>
+      <span>Total: {counter.totalFeedback}</span>
     </li>  
     <li className={css.fedbackItem}>
       <span>Positive: {counter.prosFeedbacks} %</span>
