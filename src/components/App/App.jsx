@@ -1,49 +1,51 @@
+// rafce - сніпет
 import css from './App.module.css';
-import Feedback from '../Feedback/Feedback'
-import Description from "../Description/Description";
-import Options from '../Options/Options';
+import SearchBox from '../SearchBox/SearchBox'
+import ContactForm from "../ContactForm/ContactForm";
+import ContactList from '../ContactList/ContactList';
 import { useEffect, useState } from 'react';
-import Notification from '../Notification/Notification';
-const feedbackType = {
-	good: 0,
-	neutral: 0,
-	bad: 0}
+// import Notification from '../Notification/Notification';
+
+const userData = [
+  {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
+  {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
+  {id: 'id-3', name: 'Eden Clements', number: '645-17-79'},
+  {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
+]
 const App = () => {    
-    const [counter, setCounter] = useState(() => {
-    const savedFeedbacks = localStorage.getItem("saved-feedbacks");
-    if (!savedFeedbacks) return feedbackType;
-  
-    const parsedFeedbacks = JSON.parse(savedFeedbacks);
-    return parsedFeedbacks;
-  });  
-  
-  const totalFeedback = counter.good + counter.neutral + counter.bad; 
-  const prosFeedbacks = Math.round(((counter.good + counter.neutral) / (counter.good + counter.neutral + counter.bad)) * 100);
+  const [inputValue, setInputValue] = useState(""); /*searchBox*/
 
-useEffect(() => {
-  localStorage.setItem("saved-feedbacks", JSON.stringify(counter));
-}, [counter]);
-
-const updateFeedback = feedbackType => {    
-    setCounter({...counter, [feedbackType]: counter[feedbackType] + 1});     
+   const [userContact, setUserContact] = useState(() => {
+    const savedContacts = localStorage.getItem("savedContacts");
+    if (!savedContacts) return userData;
+    const parsedContacts = JSON.parse(savedContacts);
+    return parsedContacts;
+   });  
+   useEffect(() => {
+    localStorage.setItem("saved-contacts", JSON.stringify(userContact));
+   }, [userContact]);
+   
+/*searchBox*/
+const handleChange = (evt) => {    
+    const search = (evt.target.value.toLowerCase())
+    const filteredNames = userContact.filter(names => names.name.toLowerCase().includes(search))
+    setInputValue(filteredNames)
   };
-  const handleReset = () => {setCounter(feedbackType);};  
 
   return (
     <div className={css.pageStyle}>
-      <Description/>
-      <Options
-      updateFeedback={updateFeedback}
-      total={totalFeedback}
-      handleReset={handleReset}     
+      <h1 className={css.formTitle}>Phonebook</h1>
+      <ContactForm />
+      <SearchBox 
+      handleChange={handleChange}
+      inputValue={inputValue}/>
+      <ContactList 
+      userData={userData}
+      inputValue={inputValue}
+      userContact={userContact}
       />      
-      {totalFeedback > 0 ? <Feedback
-      good={counter.good}
-      neutral={counter.neutral}
-      bad={counter.bad}      
-      prosFeedbacks={prosFeedbacks}
-      totalFeedback={totalFeedback}
-      /> : <Notification/> }         
     </div>
   );};
 export default App
+
+// setInputValue(evt.target.value);

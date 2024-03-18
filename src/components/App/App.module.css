@@ -1,10 +1,17 @@
 .pageStyle {
   display: flex;
   flex-direction: column;
-  align-items: start;
-  align-content: center;
-  padding: 20px;
+  /* align-items: center; */
+  /* align-content: center; */
+  font-family: sans-serif;
+  padding: 10px;
   margin: 0;
+  gap: 10px;
+  
 }
 
+.formTitle {
+  margin: 0;
+  font-size: 30px;
 
+}

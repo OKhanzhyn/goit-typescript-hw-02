@@ -1,0 +1,9 @@
+
+
+.filterBox {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    width: 267px;
+    padding: 0;
+}
