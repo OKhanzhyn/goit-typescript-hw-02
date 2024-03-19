@@ -26,10 +26,11 @@ const App = () => {
    }, [userContact]);
    
 /*searchBox*/
-const handleChange = (evt) => {    
-    const search = (evt.target.value.toLowerCase())
-    const filteredNames = userContact.filter(names => names.name.toLowerCase().includes(search))
-    setInputValue(filteredNames)
+const handleChange = (value) => {   
+  setInputValue(value); 
+    // const search = (evt.target.value.toLowerCase())
+    // const filteredNames = userContact.filter(names => names.name.toLowerCase().includes(search))
+    // setInputValue(filteredNames)
   };
 
   return (
