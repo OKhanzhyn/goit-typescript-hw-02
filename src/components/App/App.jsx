@@ -4,7 +4,9 @@ import SearchBox from '../SearchBox/SearchBox'
 import ContactForm from "../ContactForm/ContactForm";
 import ContactList from '../ContactList/ContactList';
 import { useEffect, useState } from 'react';
-// import Notification from '../Notification/Notification';
+// import { nanoid } from 'nanoid';
+
+// model.id = nanoid() //=> "V1StGXR8_Z5jdHi6B-myT"
 
 const userData = [
   {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
@@ -15,23 +17,27 @@ const userData = [
 const App = () => {    
   const [inputValue, setInputValue] = useState(""); /*searchBox*/
 
-   const [userContact, setUserContact] = useState(() => {
+   const [contacts, setContacts] = useState(() => {
     const savedContacts = localStorage.getItem("savedContacts");
     if (!savedContacts) return userData;
     const parsedContacts = JSON.parse(savedContacts);
     return parsedContacts;
    });  
    useEffect(() => {
-    localStorage.setItem("saved-contacts", JSON.stringify(userContact));
-   }, [userContact]);
-   
+    localStorage.setItem("saved-contacts", JSON.stringify(contacts));
+   }, [contacts]);
+     
 /*searchBox*/
 const handleChange = (value) => {   
-  setInputValue(value); 
-    // const search = (evt.target.value.toLowerCase())
-    // const filteredNames = userContact.filter(names => names.name.toLowerCase().includes(search))
-    // setInputValue(filteredNames)
+  setInputValue(value)   
   };
+const getVisibleContacts = () => {    
+    return contacts.filter(({ name }) => name.toLowerCase().includes(inputValue.toLowerCase().trim()));
+};
+/* contact deleting */
+const deleteContact = deletedId => {
+  setContacts(prev => prev.filter(({ id }) => id !== deletedId));
+ };
 
   return (
     <div className={css.pageStyle}>
@@ -43,10 +49,14 @@ const handleChange = (value) => {
       <ContactList 
       userData={userData}
       inputValue={inputValue}
-      userContact={userContact}
+      contacts={getVisibleContacts()}
+      deleteContact={deleteContact}
       />      
     </div>
   );};
 export default App
 
+//  const handleDelete = (contactId) => {
+//   setContacts((prevState) => prevState.filter((contact) => contact.id !== contactId));
+//  }
 // setInputValue(evt.target.value);

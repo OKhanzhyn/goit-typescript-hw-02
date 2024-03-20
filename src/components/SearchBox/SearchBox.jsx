@@ -10,7 +10,7 @@ const SearchBox = ({inputValue, handleChange}) => {
     <div >
       <label className={css.filterBox}>
       <span>Find contacts by name</span>
-      <input type="text" value={inputValue} onChange={(evt) => handleChange(evt.target.value)} />
+      <input type="text" value={inputValue} onChange={e => handleChange(e.target.value)} />
       
       </label>
     </div>
