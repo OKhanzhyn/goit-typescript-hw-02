@@ -2,16 +2,16 @@ import css from './Contact.module.css';
 import { BsPersonFill } from "react-icons/bs";
 import { FaPhoneAlt } from "react-icons/fa";
 
-const Contact = ( contacts, deleteContact ) => {
-  console.log(contacts)
+const Contact = ( {contact, deleteContact} ) => {
+  console.log(contact)
   return (    
     <ul className={css.contact}>
       <li className={css.userInfo}>
-        <span className={css.userItem}><BsPersonFill className={css.icon}/> {contacts.name}</span>
-        <span className={css.userItem}><FaPhoneAlt className={css.icon}/> {contacts.number}</span>
+        <span className={css.userItem}><BsPersonFill className={css.icon}/> {contact.name}</span>
+        <span className={css.userItem}><FaPhoneAlt className={css.icon}/> {contact.number}</span>
       </li>
       <li>
-        <button onClick={() => deleteContact(contacts.id)}>Delete</button>
+        <button onClick={() => deleteContact(contact.id)} title="Click to delete contact">Delete</button>
       </li>
     </ul>
   )

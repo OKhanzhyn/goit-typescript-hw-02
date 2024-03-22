@@ -1,7 +1,7 @@
 import css from './ContactList.module.css';
 import Contact from '../Contact/Contact';
 
-const ContactList = ({ contacts }) => {
+const ContactList = ({ contacts, deleteContact }) => {
  console.log(contacts)
   return (
     <ul className={css.contactList}>
@@ -9,8 +9,8 @@ const ContactList = ({ contacts }) => {
        {contacts.map((item) => {
         return <li key={item.id}>
                   <Contact
-                  name={item.name}
-                  number={item.number}
+                  contact={item}
+                  deleteContact={deleteContact}
                   />
                </li>
            })}
