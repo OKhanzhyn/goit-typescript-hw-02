@@ -1,12 +1,12 @@
 import css from './ContactList.module.css';
 import Contact from '../Contact/Contact';
 
-const ContactList = ({ contacts, deleteContact }) => {
-  console.log(contacts)
+const ContactList = ({ users, deleteContact }) => {
+  console.log(users)
   return (
     <ul className={css.contactList}>
 
-       {contacts.map((item) => {
+       {users.map((item) => {
         return <li key={item.id}>
                   <Contact
                   contact={item}

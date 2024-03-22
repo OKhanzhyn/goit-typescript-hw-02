@@ -24,7 +24,7 @@ const App = () => {
     return parsedContacts;
    });  
    useEffect(() => {
-    localStorage.setItem("saved-contacts", JSON.stringify(contacts));
+    localStorage.setItem("savedContacts", JSON.stringify(contacts));
    }, [contacts]);
      
 /*searchBox*/
