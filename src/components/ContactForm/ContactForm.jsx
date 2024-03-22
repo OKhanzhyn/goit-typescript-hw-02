@@ -8,7 +8,7 @@ const ContactFormSchema = Yup.object().shape({
     .max(50, "User name must be less than ${max} characters!")
     .required("User name is required!"),
   number: Yup.string()
-  .min(3, "User name must be at least ${min} characters!")
+  .min(3, "Too short!")
   .max(50, "User name must be less than ${max} characters!")
   .required("Required!"),  
 });

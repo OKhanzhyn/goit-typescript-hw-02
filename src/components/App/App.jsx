@@ -38,11 +38,11 @@ const getVisibleContacts = () => {
 const deleteContact = deletedId => {
   setContacts(prev => prev.filter(({ id }) => id !== deletedId));
  };
- 
+
 /* add new contact */
-const addContact = (contactData) => {
+const addContact = (contacts) => {
   const finalContact = {
-    ...contactData,
+    ...contacts,
     id: nanoid(),
   };
   setContacts(prev => [...prev, finalContact]);
@@ -56,10 +56,12 @@ const addContact = (contactData) => {
       handleChange={handleChange}
       inputValue={inputValue}/>
       <ContactList 
-      userData={userData}
+      contacts={contacts}
+      // userData={userData}
       inputValue={inputValue}
-      contacts={getVisibleContacts()}
+      users={getVisibleContacts()}
       deleteContact={deleteContact}
+      // addContact={addContact}
       />      
     </div>
   );};

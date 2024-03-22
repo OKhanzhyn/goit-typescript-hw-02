@@ -2,7 +2,7 @@ import css from './ContactList.module.css';
 import Contact from '../Contact/Contact';
 
 const ContactList = ({ contacts, deleteContact }) => {
- console.log(contacts)
+  console.log(contacts)
   return (
     <ul className={css.contactList}>
 
@@ -11,6 +11,7 @@ const ContactList = ({ contacts, deleteContact }) => {
                   <Contact
                   contact={item}
                   deleteContact={deleteContact}
+                  // addContact={addContact}
                   />
                </li>
            })}
@@ -24,3 +25,5 @@ export default ContactList
 // userData={userData}
 // name={item.name}
 // number={item.number}
+// console.log(contacts)
+// console.log(users)
