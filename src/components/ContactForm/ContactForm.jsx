@@ -55,36 +55,11 @@ const ContactForm = ({ addContact }) => {
             component="span"
           />
       </label>
-      <button type="submit" title="Click to save new contact"
+      <button className={css.formBtn} type="submit" title="Click to save new contact"
           aria-label="Add new contact">Add contact</button>
     </Form>
     </Formik>
   );
 };
 
-
 export default ContactForm
-
-// const ContactForm = () => {
-//   const [values, setValues] = useState({
-//     name: "",
-//     number: "",
-//   });
-
-//   const handleChange = (evt) => {
-//     setValues({
-//       ...values,
-//       [evt.target.name]: evt.target.value,
-//     });
-//   };
-
-//   const handleSubmit = (evt) => {
-//     evt.preventDefault();
-
-//     console.log(values);
-
-//     setValues({
-//       name: "",
-//       number: "",
-//     });
-//   };

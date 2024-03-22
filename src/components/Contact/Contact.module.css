@@ -28,5 +28,7 @@
     gap: 5px;
     font-family: sans-serif;
     font-size: 17px;
-
+}
+.delBtn {
+    background-color: #f8d7d2;
 }

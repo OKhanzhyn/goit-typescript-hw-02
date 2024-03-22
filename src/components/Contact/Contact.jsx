@@ -11,12 +11,10 @@ const Contact = ( {contact, deleteContact} ) => {
         <span className={css.userItem}><FaPhoneAlt className={css.icon}/> {contact.number}</span>
       </li>
       <li>
-        <button onClick={() => deleteContact(contact.id)} title="Click to delete new contact">Delete</button>
+        <button className={css.delBtn} onClick={() => deleteContact(contact.id)} title="Click to delete new contact">Delete</button>
       </li>
     </ul>
   )
 }
 
 export default Contact
-
-// console.log(contact)

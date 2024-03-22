@@ -11,7 +11,6 @@ const ContactList = ({ users, deleteContact }) => {
                   <Contact
                   contact={item}
                   deleteContact={deleteContact}
-                  // addContact={addContact}
                   />
                </li>
            })}
@@ -20,10 +19,3 @@ const ContactList = ({ users, deleteContact }) => {
 }
 
 export default ContactList
-
-// userContact
-// userData={userData}
-// name={item.name}
-// number={item.number}
-// console.log(contacts)
-// console.log(users)

@@ -6,8 +6,6 @@ import ContactList from '../ContactList/ContactList';
 import { useEffect, useState } from 'react';
 import { nanoid } from 'nanoid';
 
-// model.id = nanoid() //=> "V1StGXR8_Z5jdHi6B-myT"
-
 const userData = [
   {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
   {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
@@ -51,27 +49,15 @@ const addContact = (contacts) => {
     <div className={css.pageStyle}>
       <h1 className={css.formTitle}>Phonebook</h1>
       <ContactForm 
-      addContact={addContact}/>
+      addContact={addContact}
+      />
       <SearchBox 
       handleChange={handleChange}
-      inputValue={inputValue}/>
+      />
       <ContactList 
-      contacts={contacts}
-      // userData={userData}
-      inputValue={inputValue}
       users={getVisibleContacts()}
       deleteContact={deleteContact}
-      // addContact={addContact}
       />      
     </div>
   );};
 export default App
-
-
-// const addContact = contact => {
-//   setContacts(prev => [...prev, contact]);
-// };
-//  const handleDelete = (contactId) => {
-//   setContacts((prevState) => prevState.filter((contact) => contact.id !== contactId));
-//  }
-// setInputValue(evt.target.value);

@@ -13,5 +13,7 @@
 .formTitle {
   margin: 0;
   font-size: 30px;
-
+}
+button {
+  background-color: #ced2d1;
 }
