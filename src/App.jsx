@@ -1,6 +1,6 @@
 // rafce - сніпет
 import { useEffect, useState } from 'react';
-import css from './App.module.css';
+import './App.css';
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import SearchBar from './components/SearchBar/SearchBar'
 import ImageGallery from './components/ImageGallery/ImageGallery';
@@ -104,7 +104,7 @@ const App = () => {
   // };
     
   return (
-    <div className={css.pageStyle}>
+    <div className='pageStyle'>
      <SearchBar onSubmit={handleSubmit}/>
      <ImageGallery results={photos} onModalOpen={handleOpenModal}/>
      {isError && <ErrorMessage />}
