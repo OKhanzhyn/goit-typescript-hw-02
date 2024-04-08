@@ -1,14 +1,14 @@
 // rafce - сніпет
 import { useEffect, useState } from 'react';
 import css from './App.module.css';
-import ErrorMessage from "../ErrorMessage/ErrorMessage";
-import SearchBar from '../SearchBar/SearchBar'
-import ImageGallery from '../ImageGallery/ImageGallery';
-import Loader from '../Loader/Loader';
-import { requestPhotos } from '/OKHANZHYN/Education/IT/GoIT/Full stack cours 180523/GitHub projects/React_HW/goit-react-hw-04/src/services/api';
+import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
+import SearchBar from './components/SearchBar/SearchBar'
+import ImageGallery from './components/ImageGallery/ImageGallery';
+import Loader from './components/Loader/Loader';
+import { requestPhotos } from './services/api';
 import toast from "react-hot-toast";
-import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
-import ImageModal from "../ImageModal/ImageModal";
+import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
+import ImageModal from "./components/ImageModal/ImageModal";
 
 const App = () => {    
   const [photos, setPhotos] = useState([]);
