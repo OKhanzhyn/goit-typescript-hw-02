@@ -1,0 +1,62 @@
+
+.headerStyle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+background-color: blue;
+height: 50px;
+padding: 0 100%;
+}
+.formStyle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    padding: 0;
+    border: 1px solid #808080;
+    width: 240px;
+    margin: 0;
+    /* border-radius: 10px; */
+}
+.serchBtn {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    height: 32px;
+    background-color: #ffffff;
+    /* border: 1px solid #808080; */
+    border: none;
+    /* border-right: none;  */
+    border-radius: 0;
+    /* margin-top: 5px; */
+    padding-top: 6px;
+    padding-bottom: 5px;
+    color: black;
+    padding: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 0;
+}
+.inputStyle {
+    display: flex;
+    /* align-items: center; */
+    /* align-content: center; */
+    /* justify-content: center; */
+    /* margin-bottom: 5px; */
+     padding-left: 8px;
+    /* padding-right: 0; */
+    height: 30px;
+    /* border: 1px solid #808080; */
+    /* border-left: none; */
+    border: none;
+    width: 204px;
+    font-family: sans-serif;
+    cursor: pointer;
+    margin: 0;
+}
+.inputStyle:focus {
+    border: none;
+    background-color: #f0f4f5;
+    font-family: sans-serif;
+}

@@ -1,0 +1,15 @@
+
+  .loadMoreBtn {
+    background-color: #3d3df6;
+    color: #ffff;
+    border: none;
+    font-size: 15px;
+    padding: 7px 10px;
+    font-family: sans-serif;
+    cursor: pointer;
+    margin: 0;
+  }
+  .loadMoreBtn:hover {
+    background-color: deepskyblue;
+    
+  } 
