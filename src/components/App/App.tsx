@@ -1,26 +1,26 @@
 // rafce - сніпет
 import { useEffect, useState } from 'react';
 import './App.css';
-import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
-import SearchBar from './components/SearchBar/SearchBar'
-import ImageGallery from './components/ImageGallery/ImageGallery';
-import Loader from './components/Loader/Loader';
-import { requestPhotos } from './services/api';
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
+import SearchBar from '../SearchBar/SearchBar'
+import ImageGallery from '../ImageGallery/ImageGallery';
+import Loader from '../Loader/Loader';
+import { Photo, requestPhotos } from '../../services/api';
 import toast from "react-hot-toast";
-import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
-import ImageModal from "./components/ImageModal/ImageModal";
+import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
+import ImageModal from "../ImageModal/ImageModal";
 
-const App = () => {    
-  const [photos, setPhotos] = useState([]);
-  const [query, setQuery] = useState('');
-  const [isError, setIsError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+const App: React.FC = () => {    
+  const [photos, setPhotos] = useState<Photo[] | []>([]);
+  const [query, setQuery] = useState<string>('');
+  const [isError, setIsError] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   
-  const [page, setPage] = useState(1);
-  const [isVisible, setIsVisible] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-  const [modalUrl, setModalUrl] = useState("");
-  const [modalAlt, setModalAlt] = useState("");
+  const [page, setPage] = useState<number>(1);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const [modalUrl, setModalUrl] = useState<string>("");
+  const [modalAlt, setModalAlt] = useState<string>("");
 
   useEffect(() => {
     if (!query) return;
@@ -44,9 +44,9 @@ const App = () => {
           },
         });
       }        
-      } catch (err) {
+      } catch (error) {
         setIsError(true);
-        toast.err('Oops,something went wrong, please try again later', {
+        toast.error('Oops,something went wrong, please try again later', {
           style: {
             borderRadius: '10px',
             background: '#333',
@@ -61,7 +61,7 @@ const App = () => {
     fetchDataByQuery();
   }, [page, query]);
 
-  const handleSubmit = (value) => {
+  const handleSubmit = (value: string): void => {
     if (query === value) {
       toast(`You have already got the result by request '${value}'`, {
         style: {
@@ -83,25 +83,21 @@ const App = () => {
     setIsVisible(false);
   };
 
-  const loadMore = () => {
+  const loadMore = (): void => {
     setPage((prevPage) => prevPage + 1);
   };
 
-  const handleOpenModal = (url, alt) => {
+  const handleOpenModal = (url: string, alt: string) => {
     setShowModal(true);
     setModalUrl(url);
     setModalAlt(alt);
   };
 
-  const handleCloseModal = () => {
+  const handleCloseModal = (): void => {
     setShowModal(false);
     setModalUrl("");
     setModalAlt("");
   };
-
-  // const onSetSearchQuery = (query) => {
-  //   setSearchQuery(query);
-  // };
     
   return (
     <div className='pageStyle'>
@@ -120,13 +116,4 @@ const App = () => {
   );
 };
 
-export default App
-
-// /OKHANZHYN/Education/IT/GoIT/Full stack cours 180523/GitHub projects/React_HW/goit-react-hw-04/src/services/api'
-
-//  <button className={css.loadMoreBtn} type="submit">Load more</button>
-
-
-// {is-hidden} 
-// import ContactForm from "../ContactForm/ContactForm";
-// import { nanoid } from 'nanoid';
+export default App;

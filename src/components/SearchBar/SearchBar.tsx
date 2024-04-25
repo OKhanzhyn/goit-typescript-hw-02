@@ -2,16 +2,17 @@
 import css from './SearchBar.module.css';
 import { AiOutlineSearch } from "react-icons/ai";
 import toast, { Toaster } from "react-hot-toast";
-import { useState } from "react";
+import { ChangeEvent, useState, FormEvent } from "react";
+import { InputProps } from "./SearchBar.types";
 
-const SearchBar = ({ onSubmit }) => {
-  const [query, setQuery] = useState("");
+const SearchBar: React.FC<InputProps> = ({ onSubmit }: InputProps) => {
+  const [query, setQuery] = useState<string>("");
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (query.trim() === "") {
       toast("Please fill in the search field.", {

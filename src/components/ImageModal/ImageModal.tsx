@@ -1,6 +1,7 @@
 import Modal from "react-modal";
+import { CustomStylesType, ImageModalType } from "./ImageModal.types";
 
-const customStyles = {
+const customStyles: CustomStylesType = {
   overlay: {
     backgroundColor: "rgba(15, 12, 12, 0.9)",
   },
@@ -18,7 +19,7 @@ const customStyles = {
 
 Modal.setAppElement("#root");
 
-const ImageModal = ({ modalIsOpen, closeModal, src, alt }) => {
+const ImageModal: React.FC<ImageModalType> = ({ modalIsOpen, closeModal, src, alt }: ImageModalType) => {
   return (
     <Modal
       isOpen={modalIsOpen}
